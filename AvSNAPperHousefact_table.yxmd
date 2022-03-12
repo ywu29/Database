@@ -1,0 +1,547 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.3">
+  <Nodes>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="318" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Issuancekey" selected="True" />
+            <SelectField field="IssuanceID" selected="True" />
+            <SelectField field="ISSUANCE AMOUNT TOTAL" selected="True" />
+            <SelectField field="PersonsID" selected="False" type="String" size="19" />
+            <SelectField field="FIPS" selected="False" type="V_String" size="255" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="318" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Calendarkey" selected="True" />
+            <SelectField field="CalenderID" selected="True" type="V_String" size="19" />
+            <SelectField field="year" selected="True" />
+            <SelectField field="FIPS" selected="False" type="V_String" size="255" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="318" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Localitykey" selected="True" />
+            <SelectField field="LocalityName" selected="True" />
+            <SelectField field="LocalityID" selected="True" />
+            <SelectField field="LOCALITY" selected="False" rename="Localityname" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="318" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="LOCALITY" selected="False" />
+            <SelectField field="HouseholdsID" selected="True" type="V_String" size="19" />
+            <SelectField field="HOUSEHOLDS PA" selected="False" type="Int32" size="4" />
+            <SelectField field="HOUSEHOLDS NPA" selected="False" type="Int32" size="4" />
+            <SelectField field="Year-Month" selected="False" />
+            <SelectField field="PA Avg# Per Household" selected="False" />
+            <SelectField field="NPA Avg# Per Household" selected="False" />
+            <SelectField field="Region" selected="False" />
+            <SelectField field="FIPS" selected="False" type="V_String" size="19" />
+            <SelectField field="year" selected="False" />
+            <SelectField field="month" selected="False" />
+            <SelectField field="quarter" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="546" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Issuancekey" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Calendarkey" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Issuancekey" selected="True" input="Left_" type="Int64" size="8" />
+                <SelectField field="Left_IssuanceID" selected="False" input="Left_" />
+                <SelectField field="Right_Calendarkey" selected="True" input="Right_" type="Int64" size="8" />
+                <SelectField field="Right_CalenderID" selected="False" input="Right_" />
+                <SelectField field="Right_FullDate" selected="False" input="Right_" />
+                <SelectField field="Right_month" selected="False" input="Right_" />
+                <SelectField field="Right_quater" selected="False" input="Right_" />
+                <SelectField field="Left_Year-Month" selected="False" input="Left_" />
+                <SelectField field="Right_Region" selected="False" input="Right_" />
+                <SelectField field="Right_FIPS" selected="False" rename="Right_FIPS" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="69">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="834" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Issuancekey" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Householdkey" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_HouseholdsID" selected="False" input="Right_" />
+                <SelectField field="Left_LocalityID" selected="False" input="Left_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="73">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="942" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Average([ISSUANCE AMOUNT TOTAL]/[HOUSEHOLDS TOTAL])" field="AvgSNAPperHouse" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[AvgSNAPperHouse = Average([ISSUANCE AMOUNT TOTAL]/[HOUSEHOLDS TOTAL])
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="75">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="690" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Issuancekey" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Localitykey" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_LocalityID" selected="False" input="Right_" />
+                <SelectField field="Left_IssuanceID" selected="False" input="Left_" />
+                <SelectField field="Right_Ruralornot" selected="False" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="76">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1074" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Issuancekey" selected="True" />
+            <SelectField field="Calendarkey" selected="True" />
+            <SelectField field="Localitykey" selected="True" />
+            <SelectField field="Householdkey" selected="True" />
+            <SelectField field="AvgSNAPperHouse" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="83">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1170" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="23">aka:MySQL|||AvSNAPperHouseFact_table</File>
+          <Passwords />
+          <CachedCosmeticName />
+          <FormatSpecificOptions>
+            <SpatialObjSize>8000</SpatialObjSize>
+            <TransactionSize>10000</TransactionSize>
+            <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+            <PostSQL>ALTER TABLE `dbproject`.`avsnapperhousefact_table` 
+CHANGE COLUMN `Issuancekey` `Issuancekey` BIGINT NOT NULL ,
+CHANGE COLUMN `Calendarkey` `Calendarkey` BIGINT NOT NULL ,
+CHANGE COLUMN `Localitykey` `Localitykey` INT NOT NULL ,
+CHANGE COLUMN `Householdkey` `Householdkey` INT NOT NULL ,
+ADD PRIMARY KEY (`Issuancekey`, `Calendarkey`, `Localitykey`, `Householdkey`);
+;</PostSQL>
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL>use dbproject;
+drop table if exists AvSNAPperHouseFact_table;</PreSQL>
+            <TransactionMessages>False</TransactionMessages>
+            <OutputOption>Create</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>aka:MySQL
+Query=AvSNAPperHouseFact_table</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="85">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="198" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\Trey Wah\OneDrive\Desktop\DB Project\Fissuancedim.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Fissuancedim.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Issuancekey" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="IssuanceID" size="255" source="File: C:\Users\Trey Wah\Downloads\Virginia_SNAP_Participation_and_Expenditures_2012-2021.xlsx|||`Virginia_SNAP_Participation_and$`" type="V_String" />
+            <Field name="ISSUANCE AMOUNT PA" source="File: C:\Users\Trey Wah\Downloads\Virginia_SNAP_Participation_and_Expenditures_2012-2021.xlsx|||`Virginia_SNAP_Participation_and$`" type="Int64" />
+            <Field name="ISSUANCE AMOUNT NPA" source="File: C:\Users\Trey Wah\Downloads\Virginia_SNAP_Participation_and_Expenditures_2012-2021.xlsx|||`Virginia_SNAP_Participation_and$`" type="Int64" />
+            <Field name="ISSUANCE AMOUNT TOTAL" source="File: C:\Users\Trey Wah\Downloads\Virginia_SNAP_Participation_and_Expenditures_2012-2021.xlsx|||`Virginia_SNAP_Participation_and$`" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="86">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="222" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\Trey Wah\OneDrive\Desktop\DB Project\Fcalendardim.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Fcalendardim.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Calendarkey" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="CalenderID" size="19" source="File: C:\Users\Trey Wah\Downloads\Virginia_SNAP_Participation_and_Expenditures_2012-2021.xlsx|||`Virginia_SNAP_Participation_and$`" type="V_String" />
+            <Field name="FullDate" source="File: C:\Users\Trey Wah\Downloads\Virginia_SNAP_Participation_and_Expenditures_2012-2021.xlsx|||`Virginia_SNAP_Participation_and$`" type="Date" />
+            <Field name="year" source="Formula: DateTimeFormat([Year-Month],&quot;%Y&quot;)" type="Date" />
+            <Field name="month" source="Formula: DateTimeFormat([Year-Month],&quot;%B&quot;)" type="Date" />
+            <Field name="quater" source="Formula: 'Q'+&#xA;&#xA;IIF(Substring([Year-Month],5,2) IN ('01','02','03'),'1',&#xA;IIF(Substring([Year-Month],5,2) IN ('04','05','06'),'2',&#xA;IIF(Substring([Year-Month],5,2) IN ('07','08','09'),'3',&#xA;IIF(Substring([Year-Month],5,2) IN ('10','11','12'),'4',&#xA;Null()&#xA;&#xA;))))" type="Date" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="87">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="222" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\Trey Wah\OneDrive\Desktop\DB Project\Flocalitydim.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Flocalitydim.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Localitykey" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="LocalityName" size="255" source="File: C:\Users\Trey Wah\Downloads\Virginia_SNAP_Participation_and_Expenditures_2012-2021.xlsx|||`Virginia_SNAP_Participation_and$`" type="V_String" />
+            <Field name="LocalityID" size="19" source="File: C:\Users\Trey Wah\Downloads\Virginia_SNAP_Participation_and_Expenditures_2012-2021.xlsx|||`Virginia_SNAP_Participation_and$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="88">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="234" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\Trey Wah\OneDrive\Desktop\DB Project\Fhouseholddim.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Fhouseholddim.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Householdkey" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="LOCALITY" size="255" source="File: C:\Users\Trey Wah\Downloads\Virginia_SNAP_Participation_and_Expenditures_2012-2021.xlsx|||`Virginia_SNAP_Participation_and$`" type="V_String" />
+            <Field name="HouseholdsID" size="19" source="File: C:\Users\Trey Wah\Downloads\Virginia_SNAP_Participation_and_Expenditures_2012-2021.xlsx|||`Virginia_SNAP_Participation_and$`" type="V_String" />
+            <Field name="HOUSEHOLDS PA" source="File: C:\Users\Trey Wah\Downloads\Virginia_SNAP_Participation_and_Expenditures_2012-2021.xlsx|||`Virginia_SNAP_Participation_and$`" type="Int64" />
+            <Field name="HOUSEHOLDS NPA" source="File: C:\Users\Trey Wah\Downloads\Virginia_SNAP_Participation_and_Expenditures_2012-2021.xlsx|||`Virginia_SNAP_Participation_and$`" type="Int64" />
+            <Field name="HOUSEHOLDS TOTAL" source="File: C:\Users\Trey Wah\Downloads\Virginia_SNAP_Participation_and_Expenditures_2012-2021.xlsx|||`Virginia_SNAP_Participation_and$`" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="89">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1194" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File FileFormat="19" MaxRecords="">C:\Users\Trey Wah\OneDrive\Desktop\DB Project\facttabledb.yxdb</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <NoSpatialIndex>False</NoSpatialIndex>
+            <SaveSource>True</SaveSource>
+            <WriteCompatibleVersion>False</WriteCompatibleVersion>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>facttabledb.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="19" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="19" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="75" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Join" />
+      <Destination ToolID="75" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="69" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="75" Connection="Join" />
+      <Destination ToolID="69" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="69" Connection="Join" />
+      <Destination ToolID="73" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="73" Connection="Output" />
+      <Destination ToolID="76" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="76" Connection="Output" />
+      <Destination ToolID="83" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="76" Connection="Output" />
+      <Destination ToolID="89" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="85" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="86" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="87" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="88" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>AvSNAPperHousefact_table (1)</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="69468ab3-e8f6-4b91-a824-ef2bfe61b6bc" />
+      <Telemetry>
+        <PreviousWorkflowId value="9c94638d-e5a2-4079-96e5-4625f3df17c3" />
+        <OriginWorkflowId value="dcb85482-bfe9-4ac3-bee1-6c541d789f27" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
